@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom"; // Import useNavigate for programmatic navigation
 
 const RegistrationForm = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -23,18 +26,42 @@ const RegistrationForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      setError("The password does not match");
+      setError("The passwords do not match");
     } else {
       setError("");
-      console.log("Form submitted", formData);
+      try {
+        const response = await fetch("http://localhost:5000/api/users/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            userId: formData.email,
+            phoneNumber: formData.phone,
+            password: formData.password,
+          }),
+        });
+
+        if (response.ok) {
+          navigate("/login");
+        } else {
+          const errorData = await response.json();
+          setError(errorData.message || "Registration failed, please try again.");
+        }
+      } catch (err) {
+        setError("An error occurred while registering, please try again.");
+        console.error(err);
+      }
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form
         className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg font-Inter"
         onSubmit={handleSubmit}
@@ -46,10 +73,10 @@ const RegistrationForm = () => {
             className="max-w-sm size-56x56"
           />
         </div>
-        <h2 className="items-start mb-6 text-2xl font-semibold text-gray-800 align-left ">
+        <h2 className="items-start mb-6 text-2xl font-semibold text-gray-800 align-left">
           Register
         </h2>
-        {}
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <label className="relative">
             <input
@@ -91,7 +118,7 @@ const RegistrationForm = () => {
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
-              Last Name
+              Last Name *
             </span>
           </label>
 
@@ -196,10 +223,10 @@ const RegistrationForm = () => {
         </button>
         <p className="items-center justify-center p-5 text-sm font-semibold text-center text-bold">
           Already have an account?{" "}
-          <a href="#" className="text-blue-500 hover:underline ">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Login
-          </a>
-        </p>{" "}
+          </Link>
+        </p>
       </form>
     </div>
   );

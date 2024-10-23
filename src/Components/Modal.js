@@ -1,34 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const Modal = ({ category, onClose }) => {
-  const modalRef = useRef(); // Create a ref for the modal
-  const [isOpen, setIsOpen] = useState(false); // Manage modal open state
+  const modalRef = useRef();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(true); // Set modal to open when mounted
-    document.body.style.overflow = "hidden"; // Disable scrolling
+    setIsOpen(true);
+    document.body.style.overflow = "hidden";
 
     const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        handleClose(); // Close the modal if the click is outside
+        handleClose();
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick); // Attach event listener
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick); // Cleanup event listener
-      document.body.style.overflow = ""; // Re-enable scrolling on cleanup
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.body.style.overflow = "";
     };
   }, [onClose]);
 
-  // Handle modal close with transition
   const handleClose = () => {
     setIsOpen(false);
     setTimeout(() => {
-      onClose(); // Call onClose after transition
-      document.body.style.overflow = ""; // Re-enable scrolling
-    }, 300); // Delay to allow transition to complete
+      onClose();
+      document.body.style.overflow = "";
+    }, 300);
   };
 
   return (
