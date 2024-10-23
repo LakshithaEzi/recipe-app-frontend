@@ -34,12 +34,19 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
       <form
-        className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg"
+        className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg font-Inter"
         onSubmit={handleSubmit}
       >
-        <h2 className="items-start mb-6 text-2xl font-semibold text-gray-800 align-left">
+        <div className="flex justify-center mb-4">
+          <img
+            src="https://i.postimg.cc/MTVsCK0C/Screenshot-2024-10-23-133616.png"
+            alt="Cook"
+            className="max-w-sm size-56x56"
+          />
+        </div>
+        <h2 className="items-start mb-6 text-2xl font-semibold text-gray-800 align-left ">
           Register
         </h2>
         {}
