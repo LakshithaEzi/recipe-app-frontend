@@ -60,16 +60,16 @@ const RegistrationForm = () => {
               required
               onFocus={() => setFirstNameFocus(true)}
               onBlur={() => setFirstNameFocus(formData.firstName !== "")}
-              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-2 rounded-[4px] outline-none focus:border-blue-500 placeholder-opacity-0 transition duration-700"
+              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-[1px] rounded-[4px] outline-none focus:border-[#da3772] placeholder-opacity-0 transition duration-700"
             />
             <span
               className={`absolute px-2 text-base transition-all duration-300 ${
                 firstNameFocus || formData.firstName !== ""
-                  ? "text-xs text-blue-700 -top-2 left-2 bg-white"
+                  ? "text-xs text-gray-900 -top-2 left-2 bg-white"
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
-              First Name
+              First Name *
             </span>
           </label>
 
@@ -82,12 +82,12 @@ const RegistrationForm = () => {
               required
               onFocus={() => setLastNameFocus(true)}
               onBlur={() => setLastNameFocus(formData.lastName !== "")}
-              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-2 rounded-[4px] outline-none focus:border-blue-500 placeholder-opacity-0 transition duration-700"
+              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-[1px] rounded-[4px] outline-none focus:border-[#da3772] placeholder-opacity-0 transition duration-700"
             />
             <span
               className={`absolute px-2 text-base transition-all duration-300 ${
                 lastNameFocus || formData.lastName !== ""
-                  ? "text-xs text-blue-700 -top-2 left-2 bg-white"
+                  ? "text-xs text-gray-900 -top-2 left-2 bg-white"
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
@@ -104,16 +104,16 @@ const RegistrationForm = () => {
               required
               onFocus={() => setEmailFocus(true)}
               onBlur={() => setEmailFocus(formData.email !== "")}
-              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-2 rounded-[4px] outline-none focus:border-blue-500 placeholder-opacity-0 transition duration-700"
+              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-[1px] rounded-[4px] outline-none focus:border-[#da3772] placeholder-opacity-0 transition duration-700"
             />
             <span
               className={`absolute px-2 text-base transition-all duration-300 ${
                 emailFocus || formData.email !== ""
-                  ? "text-xs text-blue-700 -top-2 left-2 bg-white"
+                  ? "text-xs text-gray-900 -top-2 left-2 bg-white"
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
-              Email
+              Email *
             </span>
           </label>
 
@@ -126,16 +126,16 @@ const RegistrationForm = () => {
               required
               onFocus={() => setPhoneFocus(true)}
               onBlur={() => setPhoneFocus(formData.phone !== "")}
-              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-2 rounded-[4px] outline-none focus:border-blue-500 placeholder-opacity-0 transition duration-700"
+              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-[1px] rounded-[4px] outline-none focus:border-[#da3772] placeholder-opacity-0 transition duration-700"
             />
             <span
               className={`absolute px-2 text-base transition-all duration-300 ${
                 phoneFocus || formData.phone !== ""
-                  ? "text-xs text-blue-700 -top-2 left-2 bg-white"
+                  ? "text-xs text-gray-900 -top-2 left-2 bg-white"
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
-              Phone
+              Phone *
             </span>
           </label>
 
@@ -148,16 +148,16 @@ const RegistrationForm = () => {
               required
               onFocus={() => setPasswordFocus(true)}
               onBlur={() => setPasswordFocus(formData.password !== "")}
-              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-2 rounded-[4px] outline-none focus:border-blue-500 placeholder-opacity-0 transition duration-700"
+              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-[1px] rounded-[4px] outline-none focus:border-[#da3772] placeholder-opacity-0 transition duration-700"
             />
             <span
               className={`absolute px-2 text-base transition-all duration-300 ${
                 passwordFocus || formData.password !== ""
-                  ? "text-xs text-blue-700 -top-2 left-2 bg-white"
+                  ? "text-xs text-gray-900 -top-2 left-2 bg-white"
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
-              Password
+              Password *
             </span>
           </label>
 
@@ -172,25 +172,25 @@ const RegistrationForm = () => {
               onBlur={() =>
                 setConfirmPasswordFocus(formData.confirmPassword !== "")
               }
-              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-2 rounded-[4px] outline-none focus:border-blue-500 placeholder-opacity-0 transition duration-700"
+              className="h-[50px] w-full px-4 text-md text-gray-500 bg-white border-gray-300 border-[1px] rounded-[4px] outline-none focus:border-[#da3772] placeholder-opacity-0 transition duration-700"
             />
             <span
               className={`absolute px-2 text-base transition-all duration-300 ${
                 confirmPasswordFocus || formData.confirmPassword !== ""
-                  ? "text-xs text-blue-700 -top-2 left-2 bg-white"
+                  ? "text-xs text-gray-900 -top-2 left-2 bg-white"
                   : "text-gray-500 top-3 left-6 bg-transparent"
               }`}
             >
-              Confirm Password
+              Confirm Password *
             </span>
+            {error && (
+              <p className="text-xs font-semibold text-left text-red-500">{error}</p>
+            )}
           </label>
         </div>
-        {error && (
-          <p className="mt-4 text-sm text-center text-red-500">{error}</p>
-        )}
         <button
           type="submit"
-          className="p-3 mt-6 text-white transition duration-300 bg-pink-500 rounded-lg hover:bg-pink-600"
+          className="p-3 mt-6 text-white transition duration-300 bg-[#da3772] rounded-lg hover:bg-pink-600"
         >
           Create Account
         </button>

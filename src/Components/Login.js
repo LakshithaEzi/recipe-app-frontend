@@ -26,7 +26,7 @@ function Login() {
               <input
                 type="text"
                 placeholder="E-mail"
-                className="h-[50px] w-96 px-6 text-xl text-gray-700 bg-white border-black border-2 rounded-[4px] border-opacity-50 outline-none focus:border-[#da3772] placeholder-red-500 placeholder-opacity-0 transition duration-700"
+                className="h-[50px] w-96 px-6 text-xl text-gray-700 bg-white border-black border-[1px] rounded-[4px] border-opacity-50 outline-none focus:border-[#da3772] placeholder-red-500 placeholder-opacity-0 transition duration-700"
                 onFocus={() => setEmailFocus(true)}
                 onBlur={() => setEmailFocus(emailValue !== "")}
                 value={emailValue}
@@ -49,7 +49,7 @@ function Login() {
               <input
                 type="password"
                 placeholder="Password"
-                className="h-[50px] w-96 px-6 text-xl text-gray-700 bg-white border-black border-2 rounded-[4px] border-opacity-50 outline-none focus:border-[#da3772] placeholder-red-500 placeholder-opacity-0 transition duration-700"
+                className="h-[50px] w-96 px-6 text-xl text-gray-700 bg-white border-black border-[1px] rounded-[4px] border-opacity-50 outline-none focus:border-[#da3772] placeholder-red-500 placeholder-opacity-0 transition duration-700"
                 onFocus={() => setPasswordFocus(true)}
                 onBlur={() => setPasswordFocus(passwordValue !== "")}
                 value={passwordValue}
